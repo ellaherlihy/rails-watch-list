@@ -1,0 +1,14 @@
+<div class="container">
+  <body>
+    <p style="color: green"><%= notice %></p>
+
+    <h1>Lists</h1>
+
+    <ul>
+      <% @lists.each do |list| %>
+       <li><%= link_to list.name, list_path(list) %></li>
+      <% end %>
+    </ul>
+
+  </body>
+</div>

@@ -1,0 +1,13 @@
+<div class="container mt-3">
+
+  <h1><%= "Add to your #{@list.name} list" %></h1>
+
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.input :comment, class: "container" %>
+    <%= f.association :movie %>
+    <%= f.button :submit, "Submit", class: "btn btn-primary" %>
+  <% end %>
+
+  <p> <%= link_to "Back to list", list_path(@list), class: "btn btn-primary mt-3" %></p>
+
+</div>
