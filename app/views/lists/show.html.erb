@@ -1,6 +1,7 @@
 <div class="container">
   <body>
-     <p style="color: green"><%= notice %></p>
+
+    <p style="color: green"><%= notice %></p>
 
     <h1><%= @list.name %></h1>
 
@@ -9,14 +10,17 @@
         <li><%= bookmark.movie.title %>
         <%= link_to "🗑",
         bookmark_path(bookmark.id),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this film?"}%>
         </li>
       <% end %>
     </ul>
 
-    <p><%= link_to "Add movie to list", new_list_bookmark_path(@list) %></p>
-    <p><%= link_to "Back to Lists", lists_path %></p>
+    <% @list.bookmarks.each do |bookmark|%>
+      <%= image_tag("#{bookmark.movie.poster_url}", class: 'inline', width: 400) %>
+    <% end %>
 
+    <p><%= link_to "Add movie to list", new_list_bookmark_path(@list), class: "btn btn-primary mt-3 inline"%></p>
+    <p><%= link_to "Back to Lists", lists_path, class: "btn btn-success" %></p>
 
   </body>
 </div>
