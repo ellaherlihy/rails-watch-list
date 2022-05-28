@@ -19,4 +19,9 @@ require "open-uri"
   Movie.create(title: movie["original_title"], overview: movie["overview"], poster_url: "https://image.tmdb.org/t/p/w500#{movie['poster_path']}", rating: movie["vote_average"])
 end
 
+List.create(name: "Horror Movies")
+List.create(name: "Foreign Cinema")
+List.create(name: "Drama")
+List.create(name: "Classics")
+
 p "seeding"
