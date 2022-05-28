@@ -2,13 +2,18 @@
   <body>
     <p style="color: green"><%= notice %></p>
 
-    <h1>Lists</h1>
 
-    <ul>
-      <% @lists.each do |list| %>
-       <li><%= link_to list.name, list_path(list) %></li>
-      <% end %>
-    </ul>
+    <div class="title-heading">
+      <h1>Lists</h1>
+    </div>
+
+    <div class="list-index">
+      <ul>
+        <% @lists.each do |list| %>
+        <li><%= link_to list.name, list_path(list) %></li>
+        <% end %>
+      </ul>
+    </div>
 
   </body>
 </div>

@@ -10,3 +10,12 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+i {
+  color: black;
+  font-size: 12px;
+}
+
+i:hover {
+  color: red;
+}

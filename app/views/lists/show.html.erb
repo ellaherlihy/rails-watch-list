@@ -2,15 +2,14 @@
   <body>
 
     <p style="color: green"><%= notice %></p>
-
     <h1><%= @list.name %></h1>
 
     <ul>
       <% @list.bookmarks.each do |bookmark| %>
         <li><%= bookmark.movie.title %>
-        <%= link_to "🗑",
-        bookmark_path(bookmark.id),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this film?"}%>
+        <%= link_to(bookmark_path(bookmark.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this film?"}) do %>
+        <i class="fas fa-trash"></i>
+        <% end %>
         </li>
       <% end %>
     </ul>
